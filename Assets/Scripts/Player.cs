@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
         if (GameManager.Instance.gameState == GameManager.State.StartGame)
         {
             weapon = GameManager.Instance.GetCurentWeapon().GetComponent<Weapon>();
+            weapon.SetBullet(10);
         }
     }
 

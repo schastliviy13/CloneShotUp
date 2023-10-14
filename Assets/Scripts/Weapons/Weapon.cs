@@ -9,13 +9,12 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private GameObject Point;//позиция курка пистолета, необходима для определения локального поворота
 
     private Vector3 direction;
+    private int countBullet = 10;
 
     protected Rigidbody _rigidbody;
     protected Transform _transform;
     protected float forceShot=13.5f;
     protected float forceRotate = 50;
-
-    public int countBullet=10;
 
     public event EventHandler OnChangeCountBulletAction;
 
@@ -60,5 +59,14 @@ public abstract class Weapon : MonoBehaviour
     {
         this.countBullet += countBullet;
         OnChangeCountBulletAction?.Invoke(this, EventArgs.Empty);
+    }
+    public void SetBullet(int countBullet)
+    {
+        this.countBullet = countBullet;
+        OnChangeCountBulletAction?.Invoke(this, EventArgs.Empty);
+    }
+    public int GetBullet()
+    {
+        return countBullet;
     }
 }

@@ -13,6 +13,11 @@ public class WeaponManager : MonoBehaviour
     {
         Instance = this;
     }
+    public void Start()
+    {
+        //устанавливаем дефолтное значение, если игрок вдруг не выберет оружие и сразу начнет играть
+        SetWeapon(0);
+    }
     private void SetWeapon(int index)
     {
         selectedWeapon = pullWeapons[index].gameObject;

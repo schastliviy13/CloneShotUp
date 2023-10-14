@@ -23,6 +23,6 @@ public class CountBulletUI : MonoBehaviour
 
     private void Weapon_OnChangeCountBulletAction(object sender, EventArgs e)
     {
-        countBulletText.text = weapon.countBullet.ToString();
+        countBulletText.text = weapon.GetBullet().ToString();
     }
 }
